@@ -1,0 +1,104 @@
+CHORDS:
+
+Verse:
+
+Emaj7 Em7 D#m7 Abm7
+Emaj7 Em7 D#m7 Abmaj
+Emaj7 Em7 D#m7 Abm7
+Dbm7 F# BM7
+
+Emaj7 Em7 D#m7 Abm7
+Emaj7 Em7 D#m7 Abmaj
+Emaj7 Em7 D#m7 Abm7
+Dbm7 F# BM7 B7
+
+Pre-chorus:
+
+Emaj7 Em7 D#m7 Abmaj7
+Dbm7 F# F#m Bmaj7
+Fdim7 Bb D#m7 Bb
+A Emaj7 F#7
+
+Chorus:
+
+G Gm F#m Bm
+Em A D E7
+G Gm F#m Bm
+Em A D Dsus4 D
+
+G Gm F#m Bm
+Em A Am D
+G A A#dim Bm
+Em A D Dsus4 D
+
+Instrumental:
+
+Emaj7 D#m7 Abm7
+Emaj7 D#m7 Abmaj7
+Emaj7 D#m7 Abm7
+Emaj7 D#m7 Abmaj7
+
+Verse:
+
+Emaj7 Em7 D#m7 Abm7
+Emaj7 Em7 D#m7 Abmaj
+Emaj7 Em7 D#m7 Abm7
+Dbm7 F# BM7
+
+Pre-chorus:
+
+Emaj7 Em7 D#m7 Abmaj7
+Dbm7 F# F#m Bmaj7
+Fdim7 Bb D#m7 Bb
+A Emaj7 F#7
+
+Chorus:
+
+G Gm F#m Bm
+Em A D E7
+G Gm F#m Bm
+Em A D Dsus4 D
+
+G Gm F#m Bm
+Em A Am D
+G A A#dim Bm
+Em A D Dsus4 D
+
+Solo:
+
+Gmaj7 Gm7 F#m7 Bm7
+Em7 A Dmaj7 D7
+
+Gmaj7 Gm7 F#m7 Bm7
+Em7 Eb/Em7 Dmaj7
+
+Bridge:
+
+Gmaj7 Gm7 F#m7 Bm7
+Em7 A Dmaj7 E7
+Gmaj7 Gm7 F#m7 Bm7
+Em Bbdim
+
+Chorus:
+
+G# G#m Gm Cm
+Fm A# D# F7
+G# G#m Gm Cm
+Fm A# D# D#sus4 D#
+
+G# G#m Gm Cm
+Fm A# A#m D#
+G# A# Bdim Cm
+Fm A# D# D#sus4 D#
+
+Instrumental:
+
+G# G#m Gm Cm
+Fm A# D# F7
+G# G#m Gm Cm
+Fm A# D# D#sus4 D#
+
+G# G#m Gm Cm
+Fm A# A#m D#
+G# A# Bdim Cm
+Fm A# D# D#sus4 D# 

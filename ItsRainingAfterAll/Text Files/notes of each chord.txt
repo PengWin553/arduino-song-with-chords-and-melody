@@ -1,0 +1,58 @@
+Verse Chords:
+    Emaj7 = E - G# - B - D#
+    Em7 = E - G - B - D
+    D#m7 = D# - F# - A# - C#
+    Abm7 = Ab - B - Eb - Gb
+    Abmaj (likely Abmaj7) = Ab - C - Eb - G
+    Dbm7 = Db - E - Ab - B
+    F# = F# - A# - C#
+    BM7 = B - D# - F# - A#
+    B7 = B - D# - F# - A
+
+Pre-Chorus Chords:
+    Abmaj7 = Ab - C - Eb - G
+    F#m = F# - A - C#
+    Bmaj7 = B - D# - F# - A#
+    Fdim7 = F - Ab - B - D
+    Bb = Bb - D - F
+    Bb7 = Bb - D - F - Ab
+    A = A - C# - E
+    F#7 = F# - A# - C# - E
+
+Chorus Chords:
+    G = G - B - D
+    Gm = G - Bb - D
+    F#m = F# - A - C#
+    Bm = B - D - F#
+    Em = E - G - B
+    A = A - C# - E
+    D = D - F# - A
+    E7 = E - G# - B - D
+    Dsus4 = D - G - A
+    Am = A - C - E
+    A#dim = A# - C# - E
+
+Solo Chords:
+    Gmaj7 = G - B - D - F#
+    Gm7 = G - Bb - D - F
+    F#m7 = F# - A - C# - E
+    Bm7 = B - D - F# - A
+    Em7 = E - G - B - D
+    Dmaj7 = D - F# - A - C#
+    D7 = D - F# - A - C
+    Eb/Em7 (Possible typo; if Ebmaj7) = Eb - G - Bb - D
+
+Bridge Chords:
+    E7 = E - G# - B - D
+    Bbdim = Bb - Db - E
+
+Key Change Chords (Chorus in G# Major):
+    G# = G# - C - D#
+    G#m = G# - B - D#
+    Gm = G - Bb - D
+    Cm = C - Eb - G
+    Fm = F - Ab - C
+    A# = A# - D - F
+    D# = D# - G - A#
+    F7 = F - A - C - Eb
+    D#sus4 = D# - G# - A#
