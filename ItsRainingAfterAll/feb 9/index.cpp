@@ -4,6 +4,12 @@
 #define BUZZER_3 6
 #define BUZZER_4 5
 
+// Note durations
+const int NOTE_PLAY = 300;
+const int NOTE_FINISH = 200;
+const int LONGER_REST = 1000;
+const int SHORT_PAUSE = 60;
+
 // Emaj7
 #define NOTE_E3 165
 #define NOTE_GS3 208
@@ -92,7 +98,7 @@
 // Chord Definitions --
 
 // Verse:
-int Emaj7[] = {NOTE_E3, NOTE_GS3, NOTE_DS4};
+int Emaj7[] = {NOTE_E3, NOTE_GS3, NOTE_DS4}; //repeats the 1st note
 int Em7[] = {NOTE_E3, NOTE_G3, NOTE_D4};
 int Dsm7[] = {NOTE_DS3, NOTE_FS3, NOTE_CS4};
 int Abm7[] = {NOTE_AB3, NOTE_B3, NOTE_GB4}; 
@@ -108,7 +114,7 @@ int Bmaj7_2[] = {NOTE_B3, NOTE_DS4, NOTE_AS4};
 int FDim7[] = {NOTE_F2, NOTE_AB3, NOTE_D4};
 int Bb7[] = {NOTE_BB3, NOTE_D4, NOTE_F4, NOTE_AB4};
 int Amaj7[] = {NOTE_A3, NOTE_CS4, NOTE_E4, NOTE_GS4};
-int FS7_short[] = {NOTE_FS3};
+int FS7_long[] = {NOTE_FS3, NOTE_AS3, NOTE_CS4, NOTE_E4};
 
 // Chord Progression
 int *chords[] = {
@@ -124,11 +130,10 @@ int *chords[] = {
   Dbm7, FS7, Bmaj7, Bmaj7, Bdom7, Bdom7,
   
   // Pre-chorus
-  
   Emaj7, Em7, Dsm7, Abmaj7,
   Dbm7, FS7, FSm7, Bmaj7_2,
   FDim7, Bb7, Dsm7, Bb7,
-  Amaj7, Amaj7, Emaj7, FS7,
+  Amaj7, Amaj7, Emaj7, FS7_long,
   
   /* Rest */
   
@@ -149,11 +154,11 @@ void loop() {
         playChord(chords[i]);
         
         if (i == 14) { 
-            delay(1200); // Longer rest
+            delay(LONGER_REST); // Longer rest
         } else if (i == 48){
-            delay(1200); // Longer rest
+            delay(LONGER_REST); // Longer rest
         } else {
-            delay(60); // Short pause between chords
+            delay(SHORT_PAUSE); // Short pause between chords
         }
     }
   
@@ -161,20 +166,21 @@ void loop() {
 }
 
 void playChord(int *chord) {
-    // Play each note in the chord sequentially to create an arpeggio effect
-    tone(BUZZER_1, chord[0], 200); // Play the first note (C3)
-    delay(200); // Wait for the note to finish
+   	// Play each note in the chord sequentially to create an arpeggio effect
+   
+   	tone(BUZZER_1, chord[0], NOTE_PLAY); // Play the first note (C3)
+    delay(NOTE_FINISH); // Wait for the note to finish
     noTone(BUZZER_1); // Stop the first note
 
-    tone(BUZZER_2, chord[1], 200); // Play the second note (E3)
-    delay(200); // Wait for the note to finish
+    tone(BUZZER_2, chord[1], NOTE_PLAY); // Play the second note (E3)
+    delay(NOTE_FINISH); // Wait for the note to finish
     noTone(BUZZER_2); // Stop the second note
 
-    tone(BUZZER_3, chord[2], 200); // Play the third note (G3)
-    delay(200); // Wait for the note to finish
+    tone(BUZZER_3, chord[2], NOTE_PLAY); // Play the third note (G3)
+    delay(NOTE_FINISH); // Wait for the note to finish
     noTone(BUZZER_3); // Stop the third note
   
-  	tone(BUZZER_4, chord[3], 200); // Play the third note (G3)
-    delay(200); // Wait for the note to finish
+  	tone(BUZZER_4, chord[3], NOTE_PLAY); // Play the third note (G3)
+    delay(NOTE_FINISH); // Wait for the note to finish
     noTone(BUZZER_4); // Stop the third note
 }
