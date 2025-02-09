@@ -7,7 +7,7 @@
 // Note durations
 const int NOTE_PLAY = 300;
 const int NOTE_FINISH = 200;
-const int LONGER_REST = 1000;
+const int LONGER_REST = 800;
 const int SHORT_PAUSE = 60;
 
 // Emaj7
@@ -67,13 +67,89 @@ const int SHORT_PAUSE = 60;
 #define NOTE_BB3 233
 #define NOTE_AB4 415
 
-// Chorus
-#define NOTE_G3 196
-#define NOTE_BB3 233
-#define NOTE_BM3 247
+// Gmaj7 (G Major 7)
+#define NOTE_G2 98
+#define NOTE_B2 123
+#define NOTE_D3 147
+#define NOTE_FS3 185
+
+// Gm7 (G Minor 7)
+#define NOTE_G2 98
+#define NOTE_BB2 117
+#define NOTE_D3 147
+#define NOTE_F3 175
+
+// FSm7 (FS Minor 7)
+#define NOTE_FS2 93
+#define NOTE_CS3 139
+#define NOTE_E3 165
 #define NOTE_A3 220
-#define NOTE_AM3 220
-#define NOTE_E4 329
+
+// Bm7 (B Minor 7)
+#define NOTE_B2 123
+#define NOTE_D3 147
+#define NOTE_FS3 185
+#define NOTE_A3 220
+
+// Em7 (E Minor 7)
+#define NOTE_E2 82
+#define NOTE_B2 123
+#define NOTE_D3 147
+#define NOTE_G3 196
+
+// A7 (A Dominant 7)
+#define NOTE_A2 110
+#define NOTE_CS3 139
+#define NOTE_E3 165
+#define NOTE_G3 196
+
+// D7 (D Dominant 7)
+#define NOTE_D2 73
+#define NOTE_A2 110
+#define NOTE_C3 131
+#define NOTE_FS3 185
+
+// E7 (E Dominant 7)
+#define NOTE_E2 82
+#define NOTE_B2 123
+#define NOTE_D3 147
+#define NOTE_GS3 208
+
+// Gmaj (G Major)
+#define NOTE_G2 98
+#define NOTE_B2 123
+#define NOTE_D3 147
+#define NOTE_G3 196
+
+// Amaj7 (A Major 7)
+#define NOTE_A2 110
+#define NOTE_CS3 139
+#define NOTE_E3 165
+#define NOTE_GS3 208
+
+// D (D Major)
+#define NOTE_D2 73
+#define NOTE_A2 110
+#define NOTE_D3 147
+#define NOTE_FS3 185
+
+// Dsus4 (D Suspended 4th)
+#define NOTE_D2 73
+#define NOTE_A2 110
+#define NOTE_D3 147
+#define NOTE_G3 196
+
+// Am7 (A Minor 7)
+#define NOTE_A2 110
+#define NOTE_C3 131
+#define NOTE_E3 165
+#define NOTE_G3 196
+
+// ABSdim7 (ABS Diminished 7)
+#define NOTE_BB2 117
+#define NOTE_CS3 139
+#define NOTE_E3 165
+#define NOTE_G3 196
 
 // Solo
 #define NOTE_GM3 196
@@ -116,6 +192,23 @@ int Bb7[] = {NOTE_BB3, NOTE_D4, NOTE_F4, NOTE_AB4};
 int Amaj7[] = {NOTE_A3, NOTE_CS4, NOTE_E4, NOTE_GS4};
 int FS7_long[] = {NOTE_FS3, NOTE_AS3, NOTE_CS4, NOTE_E4};
 
+// Chorus:
+int Gmaj7[] = {NOTE_G2, NOTE_B2, NOTE_FS3};
+int Gm7[] = {NOTE_G2, NOTE_BB2, NOTE_F3};
+int FSm7_lower[] = {NOTE_FS2, NOTE_CS3, NOTE_A3};
+int Bm7[] = {NOTE_B2, NOTE_D3, NOTE_A3};
+int Em7_lower[] = {NOTE_E2, NOTE_B2, NOTE_G3};
+int Adom7[] = {NOTE_A2, NOTE_CS3, NOTE_G3};
+int D7[] = {NOTE_D2, NOTE_A2, NOTE_FS3};
+int E7[] = {NOTE_E2, NOTE_B2, NOTE_GS3};
+
+// Second Part of Chorus:
+int Amaj7_lower[] = {NOTE_A2, NOTE_CS3, NOTE_GS3};
+int D[] = {NOTE_D2, NOTE_A2, NOTE_FS3};
+int Dsus4[] = {NOTE_D2, NOTE_A2, NOTE_G3};
+int Am7[] = {NOTE_A2, NOTE_C3, NOTE_G3};
+int ASdim7[] = {NOTE_BB2, NOTE_CS3, NOTE_G3};
+
 // Chord Progression
 int *chords[] = {
   // Verse
@@ -135,8 +228,16 @@ int *chords[] = {
   FDim7, Bb7, Dsm7, Bb7,
   Amaj7, Amaj7, Emaj7, FS7_long,
   
-  /* Rest */
-  
+  // Chorus
+  Gmaj7, Gm7, FSm7_lower, Bm7,
+  Em7_lower, Adom7, D7, E7,
+  Gmaj7, Gm7, FSm7_lower, Bm7,
+  Em7_lower, Amaj7_lower, Dsus4, D,
+
+  Gmaj7, Gm7, FSm7_lower, Bm7,
+  Em7_lower, Adom7, Am7, D7,
+  Gmaj7, Adom7, ASdim7, Bm7,
+  Em7_lower, Adom7, Dsus4, D
 };
 
 int numChords = sizeof(chords) / sizeof(chords[0]);
@@ -166,8 +267,21 @@ void loop() {
 }
 
 void playChord(int *chord) {
+  
+    // Special case for FS7_long: Only play the first note, mute the others
+    if (chord == FS7_long) {
+        tone(BUZZER_1, chord[0], NOTE_PLAY);
+        delay(NOTE_FINISH);
+        noTone(BUZZER_1);
+
+        // Mute the rest
+        noTone(BUZZER_2);
+        noTone(BUZZER_3);
+        noTone(BUZZER_4);
+        return;
+    }
+  
    	// Play each note in the chord sequentially to create an arpeggio effect
-   
    	tone(BUZZER_1, chord[0], NOTE_PLAY); // Play the first note (C3)
     delay(NOTE_FINISH); // Wait for the note to finish
     noTone(BUZZER_1); // Stop the first note

@@ -54,15 +54,15 @@ A Emaj7 F#7
 
 Chorus:
 
-G Gm F#m Bm
-Em A D E7
-G Gm F#m Bm
-Em A D Dsus4 D
+Gmaj7 Gm7 F#m7 Bm7
+Em7 A7 D7 E7
+Gmaj Gm7 F#m7 Bm7
+Em7 Amaj7 D Dsus4 D
 
-G Gm F#m Bm
-Em A Am D
-G A A#dim Bm
-Em A D Dsus4 D
+Gmaj7 Gm7 F#m7 Bm7
+Em7 A7 Am7 D7
+Gmaj7 A A#dim7 Bm7
+Em7 A7 D Dsus4 D
 
 Solo:
 
